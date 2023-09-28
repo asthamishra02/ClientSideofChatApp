@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.vh-95{
+  height:95vh !important;
+
+}
+.input-block{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}

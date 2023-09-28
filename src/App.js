@@ -28,7 +28,7 @@ function App() {
                       <div className="position-relative"></div>
                       <div className="flex-grow-1">
                               <strong>
-                                Logged in as {user}
+                                Logged in as akkad bakkad {user}
                               </strong>
                       </div>
 

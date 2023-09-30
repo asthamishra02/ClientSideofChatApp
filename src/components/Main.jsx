@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Login from "./Login";
-import Chat from "./Chat";
+import Chat from "./ChatMain";
 
 const Main = () => {
     const[newUser,setNewUser] = useState("");

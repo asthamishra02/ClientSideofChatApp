@@ -1,4 +1,5 @@
 import React from 'react';
+// import ChatHeader from './ChatHeader';
 const Chat = ({user}) => {
     return 
     (
@@ -6,6 +7,7 @@ const Chat = ({user}) => {
         <div className="card border-2 border-info w 100">
         <div className="row vh-95">
         <div className="col-lg-12 col-xl-12">
+          <ChatHeader user = {user} />
         <div className="align-items-start py-2 px-4 w-100 border-bottom border-info  d-lg-block sticky-top bg-white">
           <div className="d-flex align-items-center py-1">
             <div className="position-relative"></div>

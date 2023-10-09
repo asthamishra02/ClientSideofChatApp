@@ -11,6 +11,8 @@ const Main = (socket) => {
           }
         function logNewUser () {
                 setUser(newUser);
+                socket.auth={ username: newUser }
+                socket.connect();
         }
         
     return (

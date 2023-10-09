@@ -9,7 +9,7 @@ const Chat = ({ user, message , setMessage }) => {
   return (
     <>
       <ChatContainer>
-      <ChatHeader user={user}/>
+      <ChatHeader user = {user}/>
       <ChatInput message={message} setMessage = {setMessage} />
       </ChatContainer>
       

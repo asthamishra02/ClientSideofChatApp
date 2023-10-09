@@ -10,9 +10,9 @@ const Main = (socket) => {
             setNewUser(input.value);
           }
         function logNewUser () {
-                setUser(newUser);
-                socket.auth={ username: newUser }
-                socket.connect(); 
+          setUser(newUser);
+          socket.auth={ username: newUser }
+          socket.connect(); 
         }
         
     return (

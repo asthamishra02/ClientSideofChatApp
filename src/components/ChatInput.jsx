@@ -9,7 +9,7 @@ const ChatInput = ( message , setMessage ) => {
                 name="message"
                 value={message}
                 placeholder='Type a message...'
-                onChange={({ currentTarget: input}) => setMessage(input.value)}
+                onChange={({ currentTarget:input}) => setMessage(input.value)}
               />
               <button className='btn btn-info'>Send</button>
             </div>
@@ -17,3 +17,5 @@ const ChatInput = ( message , setMessage ) => {
         );
 };
 export default ChatInput;
+
+

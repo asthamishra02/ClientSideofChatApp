@@ -2,12 +2,13 @@
 // import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
-// import {io} from "socket.io-client";
+import {io} from "socket.io-client";
 import React  from "react";
 // import Login from "./components/Login";
 // import Chat from "./components/Chat";
 import Main from "./components/Main";
 
+const socket = io("http://localhost:4000")
 function App() 
 { 
   //   const[newUser,setNewUser] = useState("");
@@ -44,7 +45,7 @@ function App()
   // </main>
 // </>
 return (
-  <Main />
+  <Main socket={socket} />
 )
   
 

@@ -1,17 +1,19 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import Login from "./Login";
 import Chat from "./ChatMain";
 
-const Main = (socket) => {
+const Main = ({socket}) => {
+  console.log(socket)
     const[newUser,setNewUser] = useState("");
     const [user,setUser] = useState("");
     const[message,setMessage] = useState("");
+
     function handleChange ({currentTarget:input}){
             setNewUser(input.value);
           }
         function logNewUser () {
           setUser(newUser);
-          socket.auth={ username: newUser }
+          socket.auth = {username:newUser}
           socket.connect(); 
         }
         

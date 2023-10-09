@@ -1,5 +1,5 @@
 import React from "react";
-const ChatInput = ( message , setMessage ) => {
+const ChatInput = ( {message , setMessage} ) => {
         return (
             <div className="align-items-end border-info py-3 px-4 border-top d-lg-block input-block">
             <div className='input-group flex-fill'>
@@ -9,7 +9,7 @@ const ChatInput = ( message , setMessage ) => {
                 name="message"
                 value={message}
                 placeholder='Type a message...'
-                onChange={({ currentTarget:input}) => setMessage(input.value)}
+                onChange={({currentTarget:input}) => setMessage(input.value)}
               />
               <button className='btn btn-info'>Send</button>
             </div>

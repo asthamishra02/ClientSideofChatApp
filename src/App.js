@@ -3,46 +3,50 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 // import {io} from "socket.io-client";
-import React , {useState} from "react";
-import Login from "./components/Login";
-import Chat from "./components/Chat";
+import React  from "react";
+// import Login from "./components/Login";
+// import Chat from "./components/Chat";
+import Main from "./components/Main";
+
 function App() 
 { 
-    const[newUser,setNewUser] = useState("");
-    const [user,setUser] = useState("");
-    const[message,setMessage] = useState("");
-          function handleChange ({currentTarget:input}){
-            setNewUser(input.value);
-          }
-        function logNewUser () {
-                setUser(newUser);
-        }
-        function logNewUser(){
-          setUser(newUser);
-        }
-   return (
-    <>
-    <main className="content">
-    <div className="container mt-3">
-      {user && 
-      <Chat 
-       user = {user}/>
-      }
+  //   const[newUser,setNewUser] = useState("");
+  //   const [user,setUser] = useState("");
+  //   const[message,setMessage] = useState("");
+  //         function handleChange ({currentTarget:input}){
+  //           setNewUser(input.value);
+  //         }
+  //       function logNewUser () {
+  //               setUser(newUser);
+  //       }
+  //       function logNewUser(){
+  //         setUser(newUser);
+  //       }
+  //  return (
+  //   <>
+  //   <main className="content">
+  //   <div className="container mt-3">
+  //     {user && 
+  //     <Chat 
+  //      user = {user}/>
+  //     }
         
-      {!user &&
-          (<Login
-            newUser={newUser} 
-            handleChange={handleChange} 
-            logNewUser={logNewUser}
-            />
-          )
-      }
+  //     {!user &&
+  //         (<Login
+  //           newUser={newUser} 
+  //           handleChange={handleChange} 
+  //           logNewUser={logNewUser}
+  //           />
+  //         )
+  //     }
      
-    </div>
-  </main>
-</>
-
-  )
+  //   </div>
+  // </main>
+// </>
+return (
+  <Main />
+)
+  
 
 }
 

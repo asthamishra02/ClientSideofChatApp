@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Login from "./Login";
 import Chat from "./ChatMain";
 
-const Main = () => {
+const Main = (socket) => {
     const[newUser,setNewUser] = useState("");
     const [user,setUser] = useState("");
     const[message,setMessage] = useState("");
@@ -12,9 +12,7 @@ const Main = () => {
         function logNewUser () {
                 setUser(newUser);
         }
-        function logNewUser(){
-          setUser(newUser);
-        }
+        
     return (
         <>
         <main className="content">

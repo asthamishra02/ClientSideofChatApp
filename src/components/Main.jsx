@@ -7,13 +7,19 @@ const Main = ({socket}) => {
     const[newUser,setNewUser] = useState("");
     const [user,setUser] = useState("");
     const[message,setMessage] = useState("");
-    // const[messages,setMesaages] = useState([]);
+    const[messages,setMesaages] = useState([]);
 
     useEffect(() =>{
-      socket.on("users", (users)=>{
-        console.log(users);
-
-      })
+      socket.on("users", (users)=> {
+        const messageArr = [];
+        for(const {userId,username}  of users){
+          const newMessage = { type:"UserStatus", userId,username};
+          messageArr.push(newMessage)
+        }
+        setMesaages([...messages,messageArr]);
+        setUser(users);
+       
+      }) 
       socket.on("session",({userId,username}) => {
           setUser(username);
       });

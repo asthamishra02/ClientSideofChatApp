@@ -15,7 +15,7 @@ const Chat = ({ user, message , messages, setMessage }) => {
           {messages.map((message,index)=>{
               return message.type === "UserStatus" ? <div key={index} className='text-center'> 
               <span className='badge bg-info'>
-                {message.userId === user.userId ? "You have Joined!" :`${message.username} has Joined!`}
+                {message.userId === user.userId ? "You have Joined!" : `${message.username} has Joined!`}
               </span>
               </div> : null 
 

@@ -5,7 +5,7 @@ import Chat from "./ChatMain";
 const Main = ({socket}) => {
   console.log(socket)
     const[newUser,setNewUser] = useState("");
-    const [user,setUser] = useState("");
+    const [user,setUser] = useState({});
     const[message,setMessage] = useState("");
     const[messages,setMesaages] = useState([]);
 
@@ -21,9 +21,13 @@ const Main = ({socket}) => {
        
       }) 
       socket.on("session",({userId,username}) => {
-          setUser(username);
+          setUser({userId,username});
       });
-    },[socket]); 
+      socket.on("user connected" , ({userId,username}) =>{
+        const newMessage = { type:"UserStatus", userId,username};
+        setMesaages([...messages,newMessage]);
+      })
+    },[socket,messages]); 
 
     function handleChange ({currentTarget:input}){
             setNewUser(input.value);
@@ -38,15 +42,16 @@ const Main = ({socket}) => {
         <>
         <main className="content">
         <div className="container mt-3">
-          {user && 
+          {user.userId && 
           <Chat 
            user = {user}
            message={message}
+           messages={messages}
            setMessage={setMessage}
            />
           }
             
-          {!user &&
+          {!user.userId &&
               (<Login
                 newUser={newUser} 
                 handleChange={handleChange} 

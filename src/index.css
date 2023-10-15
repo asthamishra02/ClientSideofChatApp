@@ -20,3 +20,6 @@ code {
   position: absolute;
   width: 100%;
 }
+.chat-height{
+  height:calc(100%-20vh)
+}

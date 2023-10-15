@@ -6,7 +6,7 @@ const ChatHeader = ({user}) =>{
           <div className="position-relative"></div>
           <div className="flex-grow-1">
             <strong>
-              Logged in as {user}
+              Logged in as {user.username}
             </strong>
           </div>
 

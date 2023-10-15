@@ -7,6 +7,13 @@ const Main = ({socket}) => {
     const[newUser,setNewUser] = useState("");
     const [user,setUser] = useState("");
     const[message,setMessage] = useState("");
+    const[messages,setMesaages] = useState([]);
+    
+    useEffect(() =>{
+      socket.on("session",({userId,username}) => {
+          setUser(username);
+      });
+    },[socket]); 
 
     function handleChange ({currentTarget:input}){
             setNewUser(input.value);

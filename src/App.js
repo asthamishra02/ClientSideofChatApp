@@ -8,7 +8,7 @@ import React  from "react";
 // import Chat from "./components/Chat";
 import Main from "./components/Main";
 
-const socket = io("http://localhost:4000")
+const socket = io("http://localhost:4002")
 function App() 
 { 
   //   const[newUser,setNewUser] = useState("");

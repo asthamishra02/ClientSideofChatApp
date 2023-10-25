@@ -14,7 +14,7 @@ const Main = ({socket}) => {
       socket.on("users", (users)=> {
         const messageArr = [];
         for(const {userId,username}  of users){
-          const newMessage = { type:"UserStatus", userId,username};
+          const newMessage = { type:"UserStatus", userId , username};
           messageArr.push(newMessage)
         }
         setMesaages([...messages,...messageArr]);

@@ -2,6 +2,7 @@ import React, {useState,useEffect} from "react";
 import Login from "./Login";
 import Chat from "./ChatMain";
 
+
 const Main = ({socket}) => {
   console.log(socket)
     const[newUser,setNewUser] = useState("");
@@ -16,15 +17,24 @@ const Main = ({socket}) => {
           const newMessage = { type:"UserStatus", userId,username};
           messageArr.push(newMessage)
         }
-        setMesaages([...messages,messageArr]);
+        setMesaages([...messages,...messageArr]);
         setUser(users);
        
       }) 
-      socket.on("session",({userId,username}) => {
+      socket.on("session",({userId,username}) => { 
           setUser({userId,username});
       });
       socket.on("user connected" , ({userId,username}) =>{
         const newMessage = { type:"UserStatus", userId,username};
+        setMesaages([...messages,newMessage]);
+      });
+      socket.on("new message",({userId, username, message}) =>{
+        const newMessage = { type: "message" , 
+        userId: user.userId, 
+        username: user.username,
+        message,
+      };
+
         setMesaages([...messages,newMessage]);
       })
     },[socket,messages]); 
@@ -37,6 +47,17 @@ const Main = ({socket}) => {
           socket.auth = {username:newUser}
           socket.connect(); 
         }
+        function sendMessage(){
+          socket.emit("new message" , message);
+
+          const newMessage = { type: "message" , 
+          userId: user.userId, 
+          username: user.username,
+          message,
+        };
+          setMesaages([...messages,newMessage]); 
+          setMessage("");
+        }
         
     return (
         <>
@@ -48,6 +69,7 @@ const Main = ({socket}) => {
            message={message}
            messages={messages}
            setMessage={setMessage}
+           sendMessage={sendMessage}
            />
           }
             

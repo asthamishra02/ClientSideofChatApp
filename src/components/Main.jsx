@@ -4,7 +4,7 @@ import Chat from "./ChatMain";
 
 
 const Main = ({socket}) => {
-  console.log(socket)
+  // console.log(socket)
     const[newUser,setNewUser] = useState("");
     const [user,setUser] = useState({});
     const[message,setMessage] = useState("");
@@ -18,7 +18,7 @@ const Main = ({socket}) => {
           messageArr.push(newMessage)
         }
         setMesaages([...messages,...messageArr]);
-        setUser(users);
+        // setUser(users);
        
       }) 
       socket.on("session",({userId,username}) => { 
@@ -29,9 +29,10 @@ const Main = ({socket}) => {
         setMesaages([...messages,newMessage]);
       });
       socket.on("new message",({userId, username, message}) =>{
+        // console.log(userId,username,message)
         const newMessage = { type: "message" , 
-        userId: user.userId, 
-        username: user.username,
+        userId, 
+        username,
         message,
       };
 

@@ -51,3 +51,13 @@ code {
   botton:0;
   /*  */
 }
+ .styles_scrollable-div__prSCv{
+  max-height:calc(100% - 2px)!important;
+  height:calc(100% - 2px)!important;
+  overflow-y: auto;
+  /* height: 90vh;
+  width: 70%;
+  /* margin: 5% 2% 0% 0%; */
+/* overflow-y: auto; */ 
+
+ } 

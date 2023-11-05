@@ -2,18 +2,18 @@ import React from 'react';
 import ChatInput from './ChatInput';
 import ChatHeader from './ChatHeader';
 import ChatContainer from './ChatContainer';
-// import ScrollableFeed from "react-scrollable-feed";
+import ReactScrollableFeed from "react-scrollable-feed";
 
 
 const Chat = ({ user, message , messages, setMessage, sendMessage }) => {
-  console.log(" user =>" , user)
+  // console.log(" user =>" , user)
   // console.log(message)
   return (
     <>
       <ChatContainer>
       <ChatHeader user = {user} />
       <div className='positon-relative chat-height overflow auto'>
-        {/* <ScrollableFeed> */}
+        <ReactScrollableFeed>
            
         
         <div className=' d-flex flex-column p-4'>
@@ -45,9 +45,11 @@ const Chat = ({ user, message , messages, setMessage, sendMessage }) => {
           } ) }
 
         </div>
-        {/* </ScrollableFeed> */}
+        </ReactScrollableFeed>
       </div>
-      <ChatInput  message={message} setMessage={setMessage} sendMessage = {sendMessage} />
+      <ChatInput  message={message} 
+      setMessage={setMessage} 
+      sendMessage = {sendMessage} />
       </ChatContainer>
       
 

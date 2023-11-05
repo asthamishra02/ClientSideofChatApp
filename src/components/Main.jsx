@@ -33,7 +33,7 @@ const Main = ({socket}) => {
         const newMessage = { type: "message" , 
         userId, 
         username,
-        message,
+        message, 
       };
 
         setMesaages([...messages,newMessage]);

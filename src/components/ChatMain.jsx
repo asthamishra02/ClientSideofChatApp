@@ -12,11 +12,12 @@ const Chat = ({ user, message , messages, setMessage, sendMessage }) => {
     <>
       <ChatContainer>
       <ChatHeader user = {user} />
-      <div className='positon-relative chat-height overflow auto'>
+      <div className='positon-relative overflow-auto scroll'>
         <ReactScrollableFeed>
            
         
         <div className=' d-flex flex-column p-4'>
+        {/* <ReactScrollableFeed> */}
           {messages.map((userMessage,index)=>{
               // console.log("usermessage => ",userMessage)
               return userMessage.type === "UserStatus" ? (<div key={index} className='text-center'> 
@@ -27,9 +28,9 @@ const Chat = ({ user, message , messages, setMessage, sendMessage }) => {
                 <div key = {index} className={userMessage.userId === user.userId ? "chat-userMessage-right pb-4" : 
                 "chat-userMessage-left pb-4"}
                 >
-                  <div className="text-muted small text-nowrap mt-2">
+                  {/* <div className="text-muted small text-nowrap mt-2">
                     12:00 AM
-                  </div>
+                  </div> */}
                   <div className='flex-shrink-1 bg-light rounded py-2 px-3 ml-3'>
                     <div className='font-weight-bold mb-1'>
                       {userMessage.userId === user.userId ? "You" : userMessage.username}
@@ -43,10 +44,11 @@ const Chat = ({ user, message , messages, setMessage, sendMessage }) => {
               
 
           } ) }
-
+    {/* </ReactScrollableFeed> */}
         </div>
         </ReactScrollableFeed>
       </div>
+      {/* </ReactScrollableFeed> */}
       <ChatInput  message={message} 
       setMessage={setMessage} 
       sendMessage = {sendMessage} />

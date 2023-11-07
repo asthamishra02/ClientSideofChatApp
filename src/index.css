@@ -61,3 +61,10 @@ code {
 /* overflow-y: auto; */ 
 
  } 
+ .scroll{
+  max-height:500px;
+  position: relative;
+  overflow-y: auto;
+  /* chat-height:100%; */
+
+ }

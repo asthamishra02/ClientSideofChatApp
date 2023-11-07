@@ -13,7 +13,7 @@ const Chat = ({ user, message , messages, setMessage, sendMessage }) => {
       <ChatContainer>
       <ChatHeader user = {user} />
       <div className='positon-relative overflow-auto scroll'>
-        <ReactScrollableFeed>
+        <ReactScrollableFeed >
            
         
         <div className=' d-flex flex-column p-4'>
